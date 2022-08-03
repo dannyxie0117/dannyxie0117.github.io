@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.T.A.T.W</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+    <style>
+       
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .hero{
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(/page2/75959.jpg);
+            background-position: center;
+            background-size: cover;
+            overflow-x: hidden;
+            position: relative;
+
+        }
+        .nav-bar{
+            display: flex;
+            padding: 40px 120px;
+        }
+        .nav-logo img{
+            width: 130px;
+           ;
+
+        }
+        .nav-links{
+            flex: 1;
+        }
+        .nav-links ul{
+            margin-left: 50px;
+            display: inline;
+        }
+        .nav-links ul li{
+            list-style-type: none;
+            display:  inline-block;
+            padding:8px 25px ;
+        }
+        .nav-links ul a{
+            color: antiquewhite;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: rgb(248, 233, 34);
+            display: block;
+            margin: auto;
+            transition: 0.3s;
+        }
+        .nav-links ul li:hover:after{
+            width: 100%;
+        }
+        .btn{
+            padding: 10px 20px;
+            border: 0;
+            background: pink;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .nav-links .btn{
+            float: right;
+
+        }
+        .banner-title{
+            margin:80px 130px ;
+            color:#fff;
+
+        }
+        .banner-title h1{
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+        .banner-title h1 span{
+            color: chartreuse;
+        }
+        .vertical-bar{
+            height: 100%;
+            background: rgb(8, 4, 4);
+            top: 0;
+            left:0;
+            position: absolute;
+
+
+        }
+        .search-icon{
+            height: 60%;
+            width: 80px;
+        }
+        .search-icon img{
+            margin: 45px 23px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .social-icons{
+            height: 35%;
+            width: 80px;
+            background: rgb(236, 178, 85);
+            padding-top: 27%;
+            bottom: 0;
+            position: absolute;
+        }
+        .social-icons img{
+            margin: 15px 10px;
+            display: block;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .notification{
+            display: flex;
+            width: 400px;
+            right: 0;
+            bottom: 0px;
+            position: absolute;
+            background:  rgb(236, 178, 85);
+            align-items:center;
+        }
+        .contents{
+            flex-basis: 50%;
+            padding: 10px;
+
+        }
+        .notification-img{
+            flex-basis: 50%;
+            
+        
+        }
+        .notification-img img{
+            width: 100%;
+            position: relative;
+            top:2px;
+            right: 2px;
+            border-radius: 10px;
+            
+        }
+        .contents a{
+            text-decoration: none;
+            color: red;
+            font-size: 13px;
+            margin: 0 10px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .contents p{
+            text-align: right;
+            margin-top:10px ;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+        .nav-bar .fa{
+            display: none;
+        }
+        @media(max-width:700px){
+            .vertical-bar{
+                display: none;
+            }
+            .banner-title{
+                margin: 80px 40px;
+            }
+            .banner-title h1{
+                font-size: 50px;
+            }
+            .notification{
+                width:100%;
+
+            }
+            .nav-bar{
+                padding:10px 30px ;
+            }
+            .menu{
+                position: absolute;
+                right: 20px;
+                top: 10px;
+                width: 50px;
+                height: 50px;
+               
+                
+             }
+             .nav-bar .fa{
+                display: block;
+                margin: 10px 25px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+             }
+             .nav-links{
+                height: 100vh;
+                width: 200px;
+                background: #000;
+                top: 0;
+                right: -200px;
+                position: absolute;
+                text-align: left;
+                z-index:2;
+                transition: 0.6s;
+
+             }
+             .nav-links ul {
+                display: block;
+                margin-top: 40px;
+             }
+             .nav-links .btn{
+                float: none;
+                margin-left: 65px;
+                margin-top: 10px;
+
+
+             }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <!-- nav area -->
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <img src="/page2/logo-g.png">
+            </div>
+            <!-- navlinks area -->
+            <!-- 有fa都是icon -->
+            <div class="nav-links" id="nav-links">
+                <img src="/close.png" class="fa" onclick="closemenu()">
+                <ul>
+                    <li><a href="/TRAVEL.html">觀光行程</a></li>
+                    <li><a href="#">伴手禮</a></li>
+                    <li><a href="#">交通租車</a></li>
+                    <li><a href="#">關於我們</a></li>
+                </ul>
+                <button  type="button" class="btn">登入</button>
+            </div>
+            <img src="/page2/menu3.png" class="menu fa" onclick="showmenu()">
+        </div>
+        <!-- title area -->
+            <div class="banner-title">
+                <h1>探索這 <span>奇妙</span>世界</h1>
+                <button  type="button" class="btn">LET'S GO</button>
+            </div>
+<!--icon area  -->
+<div class="vertical-bar">
+    <div class="search-icon">
+        <img src="/page2/menu4.png" class="fa">
+        <img src="/search2.png" class="fa">
+    </div>
+    <div class="social-icons">
+        <img src="/fb.png"class="fa">
+        <img src="/ig2.png"class="fa">
+    </div>
+</div>
+<!-- notification area -->
+<div class="notification">
+    <div class="contents">
+        <small>玩累了嗎?
+            旅行的過程中美食佳餚也是不可或缺的!
+        </small>
+        <p><a href="/index.html">了解更多</a><a href="#">美味列車</a></p>
+    </div>
+    <div class="notification-img">
+        <img src="/page2/css_220613_9.jpg" >
+    </div>
+</div>
+    </div>
+    <script>
+        var show = document.getElementById('nav-links');
+        function showmenu(){
+            show.style.right='0';
+
+        }
+        function closemenu(){
+            show.style.right='-200px'
+
+        }
+    </script>
+</body>
+</html>
